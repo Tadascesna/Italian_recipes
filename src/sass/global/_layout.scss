@@ -1,0 +1,18 @@
+.container {
+    box-sizing: border-box;
+    margin: auto;
+    max-width: $container-width;
+    padding: 0;
+}
+
+@media screen and (max-width: $breakpoint-mobile - 1px) {
+    .hidden-s {
+        display: none;
+    }
+}
+
+@media screen and (min-width: $breakpoint-mobile) {
+    .visible-s {
+        display: none;
+    }
+}

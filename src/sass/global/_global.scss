@@ -1,0 +1,42 @@
+body {
+    background-color: $color-background;
+    font: $font-mobile-body;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font: $font-mobile-h1;
+    margin: 0;
+}
+
+h2 {
+    font: $font-mobile-h2;
+    margin: 0;
+}
+
+h4 {
+    font: $font-mobile-h4;
+    margin: 0;
+}
+
+@include respond-to($breakpoint-mobile) {
+    body {
+        font: $font-desktop-body;
+    }
+
+    h1 {
+        font: $font-desktop-h1;
+        margin: 0;
+    }
+
+    h2 {
+        font: $font-desktop-h2;
+        margin: 0;
+    }
+
+    h4 {
+        font: $font-desktop-h4;
+        margin: 0;
+    }
+}

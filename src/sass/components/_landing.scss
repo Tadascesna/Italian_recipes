@@ -1,0 +1,234 @@
+.grid__top {
+    @include respond-to ($breakpoint-mobile) {
+        grid-template-areas:
+            'w  .  .  .  bg bg bg bg bg bg eg eg eg eg'
+            'w  .  .  .  bg bg bg bg bg bg eg eg eg eg'
+            'sp sp sp sp co co co co co co eg eg eg eg'
+            'sp sp sp sp co co co co co co eg eg eg eg'
+            'sp sp sp sp co co co co co co eg eg eg eg'
+            'sp sp sp sp co co co co co co eg eg eg eg'
+            'sp sp sp sp co co co co co co  .  .  .  .'
+            'sp sp sp sp co co co co co co  .  .  .  .'
+            'sp sp sp sp co co co co co co  .  .  .  .'
+            'sp sp sp sp co co co co co co  .  .  .  .'
+            'sp sp sp sp .  .  .  .  .  .   .  .  .  .'
+            'sp sp sp sp .  .  .  .  .  .   .  .  .  .'
+            'sp sp sp sp .  .  .  .  .  sh sh sh sh  .'
+            'w2 .  .  .  .  .  .  .  .  sh sh sh sh  .'
+            'w2 .  .  .  .  .  .  .  .  sh sh sh sh  .'
+            'w2 w5 w4 w4 w3 w3 w3 w3 w3 sh sh sh sh w6'
+            'w2 w5 pe pe w3 w3 w3 w3 w3 sh sh sh sh w6'
+            'w2 w5 pe pe w3 w3 w3 w3 w3 sh sh sh sh w6'
+            'w2 w5 pe pe w3 w3 w3 w3 w3 w7 w7 w7 w7 w6';
+
+        grid-template-columns: repeat(14, 1fr);
+        grid-template-rows: repeat(19, 50px);
+        margin-bottom: 200px;
+    }
+
+    background-color: $color-secondary-light;
+    display: grid;
+    grid-auto-rows: minmax(80px, auto);
+    grid-template-columns: $mobile-padding [content-start] 1fr [content-end] $mobile-padding;
+}
+
+.top__logo--container {
+    @include respond-to ($breakpoint-mobile) {
+        align-self: center;
+        grid-area: bg;
+        height: 40px;
+        justify-self: center;
+    }
+
+    align-self: center;
+    grid-column: content;
+    height: 35px;
+    justify-self: center;
+    width: 100%;
+}
+
+.top__logo {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
+.left__image--container {
+    @include respond-to ($breakpoint-mobile) {
+        grid-area: sp;
+        margin-bottom: 0px;
+    }
+
+    grid-column: content;
+    grid-row: span 8;
+    height: 100%;
+    margin-bottom: 28px;
+    width: 100%;
+}
+
+.left__image {
+    @include transition;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+
+    &:hover {
+        @include hovering;
+    }
+}
+
+.top__image--container {
+    @include respond-to ($breakpoint-mobile) {
+        grid-area: eg;
+    }
+
+    grid-column: content;
+    grid-row: span 4;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.top__image {
+    @include transition;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+
+    &:hover {
+        @include hovering;
+    }
+}
+
+.bottom__image--container {
+    @include respond-to ($breakpoint-mobile) {
+        grid-area: sh;
+        margin-top: 0px;
+    }
+
+    grid-column: content;
+    grid-row: span 4;
+    height: 100%;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.bottom__image {
+    @include transition;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+
+    &:hover {
+        @include hovering;
+    }
+}
+
+.pepper__container {
+    @include respond-to ($breakpoint-mobile) {
+        background-color: $color-background;
+        grid-area: pe;
+        margin-top: 0px;
+    }
+
+    grid-column: content;
+    margin-top: 24px;
+    width: 100%;
+    z-index: 100;
+}
+
+.text__container {
+    @include respond-to ($breakpoint-mobile) {
+        grid-area: co;
+        grid-column: default;
+    }
+
+    display: grid;
+    grid-column: content;
+    grid-row: span 4;
+    grid-template-columns: 1fr 11fr 1fr;
+
+    &__header {
+        @include respond-to ($breakpoint-mobile) {
+            font: $font-tablet-h1;
+        }
+
+        @include respond-to ($breakpoint-desktop) {
+            font: $font-desktop-h1;
+        }
+
+        align-self: end;
+        font: $font-new-mobile-h1;
+        grid-column: 1 / -1;
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    &__signature {
+        @include respond-to ($breakpoint-mobile) {
+            align-self: start;
+            grid-column: 2 / 3;
+            justify-self: end;
+        }
+
+        align-self: start;
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+
+    &__button {
+        @include transition;
+        align-self: start;
+        background-color: $color-secondary;
+        border: 0;
+        cursor: pointer;
+        font: $font-desktop-button;
+        grid-column: 1 / -1;
+        justify-self: center;
+        padding: 20px 50px;
+        text-transform: uppercase;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+
+.background--white {
+    background-color: $color-background;
+    grid-area: w;
+}
+
+.background2--white {
+    background-color: $color-background;
+    grid-area: w2;
+}
+
+.background3--white {
+    background-color: $color-background;
+    grid-area: w3;
+}
+
+.background4--white {
+    background-color: $color-background;
+    grid-area: w4;
+}
+
+.background5--white {
+    background-color: $color-background;
+    grid-area: w5;
+}
+
+.background6--white {
+    background-color: $color-background;
+    grid-area: w6;
+}
+
+.background7--white {
+    background-color: $color-background;
+    grid-area: w7;
+}
