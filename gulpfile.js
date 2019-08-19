@@ -25,7 +25,7 @@ const htmlWatchFiles = htmlSrc + '**/*.html';
 // Functions
 
 function fileInclude() {
-    return gulp.src(['index.html'])
+    return gulp.src(['app.html'])
     .pipe(fileinclude({
         prefix: '@@',
         basepath: '@file'
@@ -81,7 +81,7 @@ exports.imgmin = imgmin;
 exports.watch = watch;
 exports.fileInclude = fileInclude;
 
-const build = gulp.series(imgmin, watch);
+const build = gulp.series([imgmin, fileInclude, scss, watch]);
 gulp.task('default', build)
 
 
