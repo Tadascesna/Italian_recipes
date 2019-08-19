@@ -25,7 +25,7 @@ const htmlWatchFiles = htmlSrc + '**/*.html';
 // Functions
 
 function fileInclude() {
-    return gulp.src(['app.html'])
+    return gulp.src(['index.html'])
     .pipe(fileinclude({
         prefix: '@@',
         basepath: '@file'
